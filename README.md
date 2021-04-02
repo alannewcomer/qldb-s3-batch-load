@@ -1,7 +1,5 @@
 # qldb-s3-batch-load
 
-# Amazon QLDB Batch Load from S3 Tool
-
 ![default](IMAGES/img_0.png)
 
 **WARNING**: This guide is for demonstration purposes only and should only be used in a development or test AWS environment. Elevated IAM privileges are used.
