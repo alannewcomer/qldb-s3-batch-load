@@ -1,5 +1,7 @@
 # qldb-s3-batch-load
 
+In beta (looking for feedback)
+
 ![default](IMAGES/img_0.png)
 
 **WARNING**: This guide is for demonstration purposes only and should only be used in a development or test AWS environment. Elevated IAM privileges are used.
