@@ -94,6 +94,38 @@ Now click on "Create stack".
 
 Ensure that the CloudFormation stack creates with no issues.  The larger the sample data size, the longer the cloudformation stack will take to create. 
 
+### 2. Check the data in s3.
+
+In the CloudFormation outputs tab, click on the **S3BucketName** value.
+
+![default](IMAGES/img_8.png)
+
+Now in s3, take notice of the folder structure (500_files/Person/file_1.json).
+
+It is very important that the directory name before the file (Person) is the exact name of the QLDB table.
+
+![default](IMAGES/img_9.png)
+
+If you would like, download a file and inspect the contents.  An example is shown below.
+
+![default](IMAGES/img_10.png)
+
+### 3. Start the State Machine.
+
+Head back over to cloudformation and in the outputs tab, select the **StateMachine**.
+
+![default](IMAGES/img_11.png)
+
+Now click on **Start execution**, and then click **Start execution** again. 
+
+![default](IMAGES/img_12.png)
+
+The step function is now running and loading data into QLDB.
+
+### 4. Take a look at the progress in DynamoDB.
+
+
+
 License
 ----
 
