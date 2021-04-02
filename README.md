@@ -52,7 +52,7 @@ In the **Infrastucture Configuration** section:
 
 Set **QLDB Ledger Name** and **DynamoDB Table Name** to an account and region unique name.
 
-![default](IMAGES/img_1.png)
+![default](IMAGES/img_3.png)
 
 In the **SQLDB Load Configuration** section, the parameters will determine how transactions load into QLDB.  
 
@@ -62,7 +62,7 @@ In the **SQLDB Load Configuration** section, the parameters will determine how t
 
 **JSON or CSV file** will configure the loader to expect json or csv files from s3.
 
-![default](IMAGES/img_2.png)
+![default](IMAGES/img_4.png)
 
 In the **Sample Data Configuration** section, use good judgement here and don't create data that can not be processed.  For example, a 1,000 row file will be processed, a 10,000 row file might get processed, a 100,000 will not get proccessed. QLDB has limits like all other AWS services.
 
@@ -78,19 +78,19 @@ The theme for the sample data is based on DMV data.
 
 **Extra Blob in KB** will set an extra BLOB of KB size x for each QLDB document. 
 
-![default](IMAGES/img_3.png)
+![default](IMAGES/img_5.png)
 
 #### Capabilities section
 
 In the **Capabilities section**, check "I acknowledge that AWS CloudFormation might create IAM resources."
 
-![default](IMAGES/img_4.png)
+![default](IMAGES/img_6.png)
 
 #### Create Stack
 
 Now click on "Create stack".
 
-<img src="IMAGES/img_5.png" width="400" >
+<img src="IMAGES/img_7.png" width="400" >
 
 Ensure that the CloudFormation stack creates with no issues.  The larger the sample data size, the longer the cloudformation stack will take to create. 
 
