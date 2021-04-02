@@ -178,14 +178,13 @@ Open the s3 bucket shown in the output section of the CloudFormation build.
 
 Insert the data into QLDB. Ensure that the below folder structure is followed. 
 
-< **X** _files>/< **QLDB table name** >/<file_ **n** . **type** >
-
-    Where **X** is the total number of files
-    **QLDB Table name** is the same as what will be created in QLDB
-    **n** is the specific file number. Example, file_1 or file_2050
-    **type** is .csv or .json.
+    <**X**_files>/<**QLDB table name**>/<file_**n**.**type**>
+        Where **X** is the total number of files
+        **QLDB Table name** is the same as what will be created in QLDB
+        **n** is the specific file number. Example, file_1 or file_2050
+        **type** is .csv or .json.
     
-Upload your sample data. 
+Upload your sample data and ensure that only .csv or .json files are uploaded.
 
 Note:
     -  csv files must have a header and no commas within values.
@@ -198,7 +197,61 @@ Note:
             ]
         }
    
+![default](IMAGES/img_19.png)
 
+### 2. Check DynamoDB table.
+
+Head over to DynamoDB and see that the file has been added.
+
+![default](IMAGES/img_20.png)
+
+### 3. Create QLDB table and index.
+
+Head on over to QLDB and select the created ledger.
+
+![default](IMAGES/img_21.png)
+
+Now, click on **Query Editor**.
+
+![default](IMAGES/img_22.png)
+
+Enter the below query and click **Run** to create a table.
+
+```sql
+create table <table name>
+```
+
+![default](IMAGES/img_23.png)
+
+Enter the below query and click **Run** to create a table.
+
+```sql
+create index on <table name> (<index name>)
+```
+
+![default](IMAGES/img_24.png)
+
+### 4. Start the State Machine.
+
+Head back over to cloudformation and in the outputs tab, copy down the **StateMachine** arn.
+
+![default](IMAGES/img_11.png)
+
+Head on over to Step Fucntions and open the referenced State Machine.
+
+![default](IMAGES/img_12.png)
+
+Now click on **Start execution**. 
+
+![default](IMAGES/img_13.png)
+
+Then click **Start execution** again.
+
+![default](IMAGES/img_14.png)
+
+The step function is now running and loading data into QLDB.
+
+Congrats, you know completed a batch load from s3 into QLDB with your own csv or json file.
 
 License
 ----
