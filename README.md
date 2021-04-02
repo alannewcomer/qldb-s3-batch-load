@@ -2,7 +2,7 @@
 
 # Amazon QLDB Data Simulation Tool
 
-[![N|Solid](https://d1.awsstatic.com/r2018/h/99Product-Page-Diagram_AWS-Quantum.f03953678ba33a2d1b12aee6ee530e45507e7ac9.png)](https://aws.amazon.com/qldb/)
+![default](IMAGES/img_0.png)
 
 **WARNING**: This guide is for demonstration purposes only and should only be used in a development or test AWS environment. Elevated IAM privileges are used.
 
