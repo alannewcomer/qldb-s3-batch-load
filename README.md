@@ -114,10 +114,11 @@ If you would like, download a file and inspect the contents.  An example is show
 
 ### 3. Start the State Machine.
 
-Head back over to cloudformation and in the outputs tab, select the **StateMachine**.
+Head back over to cloudformation and in the outputs tab, copy down the **StateMachine** arn.
 
 ![default](IMAGES/img_11.png)
 
+Head on over to Step Fucntions and open the referenced State Machine.
 Now click on **Start execution**, and then click **Start execution** again. 
 
 ![default](IMAGES/img_12.png)
