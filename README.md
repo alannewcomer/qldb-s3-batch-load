@@ -1,6 +1,6 @@
 # qldb-s3-batch-load
 
-# Amazon QLDB Data Simulation Tool
+# Amazon QLDB Batch Load from S3 Tool
 
 ![default](IMAGES/img_0.png)
 
