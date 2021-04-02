@@ -119,13 +119,46 @@ Head back over to cloudformation and in the outputs tab, copy down the **StateMa
 ![default](IMAGES/img_11.png)
 
 Head on over to Step Fucntions and open the referenced State Machine.
-Now click on **Start execution**, and then click **Start execution** again. 
 
 ![default](IMAGES/img_12.png)
+
+Now click on **Start execution**. 
+
+![default](IMAGES/img_13.png)
+
+Then click **Start execution** again.
+
+![default](IMAGES/img_14.png)
 
 The step function is now running and loading data into QLDB.
 
 ### 4. Take a look at the progress in DynamoDB.
+
+Head over to DynamoDB and find the tabled created.  The name will match the parameter in the CloudFormation template.
+
+![default](IMAGES/img_15.png)
+
+Open the table and notice the **Item Preview** section towards the bottom of the screen.
+
+![default](IMAGES/img_16.png)
+
+Click on a file that has the step coloumn as **processed**.
+
+A processed file means that all the data was entererd into QLDB.  If any failures were to happen, the row would be marked as **failed** isntead of **processed**.
+
+You can see that the doc_count is 10,000 and 250 transactions were completed in a time of 127 seconds. That means the one lambda function processed the file at ~2 txns per second and ~79 docs per second into QLDB. 
+
+**stats** gives you stats on total transaction time. **qldb_stats** gives you stats on qldb server side time.
+
+![default](IMAGES/img_17.png)
+
+When the State Machine is done processing, ensure that no files failed to load. This can be done by searching the step column for items matching **failed** in the item explorer.
+
+![default](IMAGES/img_18.png)
+
+Congrats, you know completed a large batch load from s3 into QLDB.
+
+### 5. Optional, bring your own files.
 
 
 
