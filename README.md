@@ -178,7 +178,8 @@ Open the s3 bucket shown in the output section of the CloudFormation build.
 
 Insert the data into QLDB. Ensure that the below folder structure is followed. 
 
-<**X**_files>/<**QLDB table name**>/<file_**n**.**type**>
+< **X** _files>/< **QLDB table name** >/<file_ **n** . **type** >
+
     Where **X** is the total number of files
     **QLDB Table name** is the same as what will be created in QLDB
     **n** is the specific file number. Example, file_1 or file_2050
