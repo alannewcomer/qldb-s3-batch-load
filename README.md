@@ -251,6 +251,12 @@ Then click **Start execution** again.
 
 The step function is now running and loading data into QLDB.
 
+### 5. Check QLDB.
+
+When the state machine is completed, head on over to QLDB and check for data.
+
+![default](IMAGES/img_25.png)
+
 Congrats, you know completed a batch load from s3 into QLDB with your own csv or json file.
 
 License
