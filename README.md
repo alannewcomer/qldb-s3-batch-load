@@ -158,8 +158,45 @@ When the State Machine is done processing, ensure that no files failed to load. 
 
 Congrats, you know completed a large batch load from s3 into QLDB.
 
-### 5. Optional, bring your own files.
+## Optional, bring your own files.
 
+### 1. CloudFormation build.
+
+If you do not want to use the DMV sampled data, you can bring your own csv files or json files. Just make sure the files are broken up into byte size chunks for lambda (can be processed in less than 15 min).
+
+In the **Sample Data Configuration** section of the initial CloudFormation build.
+
+**Create Sample Data**, set to false.
+
+![default](IMAGES/img_5.png)
+
+Now run the CloudFormation template.
+
+### 1. Load data into S3.
+
+Open the s3 bucket shown in the output section of the CloudFormation build.
+
+Insert the data into QLDB. Ensure that the below folder structure is followed. 
+
+<**X**_files>/<**QLDB table name**>/<file_**n**.**type**>
+    Where **X** is the total number of files
+    **QLDB Table name** is the same as what will be created in QLDB
+    **n** is the specific file number. Example, file_1 or file_2050
+    **type** is .csv or .json.
+    
+Upload your sample data. 
+
+Note:
+    -  csv files must have a header and no commas within values.
+    -  json files must have the following structuer.
+        {
+            "QLDB table Name": [
+                {sample json data - 1},
+                {sample json data - 2},
+                {}...
+            ]
+        }
+   
 
 
 License
