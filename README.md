@@ -260,4 +260,4 @@ Congrats, you know completed a batch load from s3 into QLDB with your own csv or
 License
 ----
 
-MIT
+Apache License 2.0
