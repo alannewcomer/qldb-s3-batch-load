@@ -96,9 +96,11 @@ Ensure that the CloudFormation stack creates with no issues.  The larger the sam
 
 ### 2. Check the data in s3.
 
-In the CloudFormation outputs tab, click on the **S3BucketName** value.
+In the CloudFormation outputs tab, see the **S3BucketName** value and copy the name for reference.
 
 ![default](IMAGES/img_8.png)
+
+Head on over to s3 and open the bucket referenced by **S3BucketName** above.
 
 Now in s3, take notice of the folder structure (500_files/Person/file_1.json).
 
