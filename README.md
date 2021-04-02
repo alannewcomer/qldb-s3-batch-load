@@ -44,11 +44,11 @@ In the **Stack name** block. Leave as default or change to a unique name.
 ![default](IMAGES/img_2.png)
 
 #### In the Parameters section, notice that there are three parameter groups. 
-- Infrastucture Configuration
+- Infrastructure Configuration
 - QLDB Load Configuration
 - Sample Data Configuration
     
-In the **Infrastucture Configuration** section:
+In the **Infrastructure Configuration** section:
 
 Set **QLDB Ledger Name** and **DynamoDB Table Name** to an account and region unique name.
 
@@ -56,7 +56,7 @@ Set **QLDB Ledger Name** and **DynamoDB Table Name** to an account and region un
 
 In the **SQLDB Load Configuration** section, the parameters will determine how transactions load into QLDB.  
 
-**Concurrent Files** will determine how many concurrent lambda functions execute QLDB transactions. For example, **100** will process 100 files from s3 in parralle and one file per lambda function.   
+**Concurrent Files** will determine how many concurrent lambda functions execute QLDB transactions. For example, **100** will process 100 files from s3 in parallel and one file per lambda function.   
 
 **Docs Per Transaction** will set how many documents to load per transaction.
 
@@ -64,15 +64,15 @@ In the **SQLDB Load Configuration** section, the parameters will determine how t
 
 ![default](IMAGES/img_4.png)
 
-In the **Sample Data Configuration** section, use good judgement here and don't create data that can not be processed.  For example, a 1,000 row file will be processed, a 10,000 row file might get processed, a 100,000 will not get proccessed. QLDB has limits like all other AWS services.
+In the **Sample Data Configuration** section, use good judgement here and don't create data that can not be processed.  For example, a 1,000 row file will be processed, a 10,000 row file might get processed, a 100,000 will not get processed. QLDB has limits like all other AWS services.
 
 The theme for the sample data is based on DMV data.
 
-**Create Sample Data**, set to true or false.  If false, leave all other paramaters as default.
+**Create Sample Data**, set to true or false.  If false, leave all other parameters as default.
 
-**Single Table Design**, set to true if the DMV sample data is combined and loaded to a single QLDB table.  Setting false, will create four tables similar to the QLDB documentation examples. A one table design will create documents that average 950 bytes, a four table design will create documetns that average 350 bytes.
+**Single Table Design**, set to true if the DMV sample data is combined and loaded to a single QLDB table.  Setting false, will create four tables similar to the QLDB documentation examples. A one table design will create documents that average 950 bytes, a four table design will create documents that average 350 bytes.
 
-**Total s3 File Count**, will create n number of samle data files in s3. 
+**Total s3 File Count**, will create n number of sample data files in s3. 
 
 **Rows Per s3 File** sets the number of rows to create per s3 file.  Each row will be a document in QLDB.
 
