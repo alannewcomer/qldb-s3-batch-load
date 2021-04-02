@@ -37,11 +37,11 @@ US West (Oregon) | [![Launch Module 1 in us-west-2](http://docs.aws.amazon.com/A
 
 A **Quick create stack** page will be opened that comes pre-populated with all required inputs.
 
-![default](IMAGES/quick-create.png)
+![default](IMAGES/img_1.png)
 
 In the **Stack name** block. Leave as default or change to a unique name. 
 
-![default](IMAGES/stack-name.png)
+![default](IMAGES/img_2.png)
 
 #### In the Parameters section, notice that there are three parameter groups. 
 - Infrastucture Configuration
